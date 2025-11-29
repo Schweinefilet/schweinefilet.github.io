@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .preview-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: #f5f5f5;
+            overflow: hidden;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+            transform-origin: top left;
+        }
+
+        .preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0);
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-card:hover .preview-overlay {
+            background: rgba(0,0,0,0.1);
+        }
+
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+
+        .project-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Projects Portfolio</h1>
+            <p class="subtitle">Explore my web applications and creative projects</p>
+        </header>
+
+        <div class="projects-grid">
+            <!-- BoulderingELO -->
+            <div class="project-card">
+                <div class="preview-container">
+                    <iframe
+                        class="preview-iframe"
+                        src="https://schweinefilet.github.io/BoulderingELO/"
+                        title="BoulderingELO Preview"
+                        loading="lazy">
+                    </iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h2 class="project-title">BoulderingELO</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Web App</span>
+                        <span class="tech-tag">Climbing</span>
+                    </div>
+                    <p class="project-description">
+                        ELO rating system for bouldering competitions and training. Track your climbing progress and compete with friends.
+                    </p>
+                    <a href="https://schweinefilet.github.io/BoulderingELO/" class="project-link" target="_blank">
+                        Visit Site →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Inside Imaging -->
+            <div class="project-card">
+                <div class="preview-container">
+                    <iframe
+                        class="preview-iframe"
+                        src="http://inside-imaging-env.eba-fwcyhccx.us-east-1.elasticbeanstalk.com"
+                        title="Inside Imaging Preview"
+                        loading="lazy">
+                    </iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h2 class="project-title">Inside Imaging</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Full Stack</span>
+                    </div>
+                    <p class="project-description">
+                        Image processing and analysis platform hosted on AWS Elastic Beanstalk.
+                    </p>
+                    <a href="http://inside-imaging-env.eba-fwcyhccx.us-east-1.elasticbeanstalk.com" class="project-link" target="_blank">
+                        Visit Site →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Wplace Archive Saudi -->
+            <div class="project-card">
+                <div class="preview-container">
+                    <iframe
+                        class="preview-iframe"
+                        src="https://schweinefilet.github.io/wplacearchivesaudi/"
+                        title="Wplace Archive Saudi Preview"
+                        loading="lazy">
+                    </iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h2 class="project-title">Wplace Archive Saudi</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Archive</span>
+                        <span class="tech-tag">Data Viz</span>
+                    </div>
+                    <p class="project-description">
+                        Interactive archive and visualization of r/place Saudi Arabia contributions and community artwork.
+                    </p>
+                    <a href="https://schweinefilet.github.io/wplacearchivesaudi/" class="project-link" target="_blank">
+                        Visit Site →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photo Portfolio -->
+            <div class="project-card">
+                <div class="preview-container">
+                    <iframe
+                        class="preview-iframe"
+                        src="https://schweinefilet.github.io/Photo-Portfolio/"
+                        title="Photo Portfolio Preview"
+                        loading="lazy">
+                    </iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h2 class="project-title">Photo Portfolio</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Photography</span>
+                        <span class="tech-tag">Portfolio</span>
+                    </div>
+                    <p class="project-description">
+                        Personal photography portfolio showcasing my creative work and visual storytelling.
+                    </p>
+                    <a href="https://schweinefilet.github.io/Photo-Portfolio/" class="project-link" target="_blank">
+                        Visit Site →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 All projects by schweinefilet</p>
+        </footer>
+    </div>
+</body>
+</html>
